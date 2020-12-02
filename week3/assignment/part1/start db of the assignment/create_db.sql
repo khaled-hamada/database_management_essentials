@@ -1,10 +1,10 @@
 -- Order Entry CREATE Statements MySQL
 
 DROP TABLE OrdLine;
-DROP TABLE OrderTbl;
-DROP TABLE Customer;
-DROP TABLE Employee;
-DROP TABLE Product;
+DROP TABLE IF EXISTS OrderTbl;
+DROP TABLE IF EXISTS Customer;
+DROP TABLE IF EXISTS Employee;
+DROP TABLE IF EXISTS Product;
 
 -------------------- Customer --------------------------------
 
@@ -33,6 +33,7 @@ CREATE TABLE Employee
 CONSTRAINT PKEmployee PRIMARY KEY (EmpNo),
 CONSTRAINT UniqueEMail UNIQUE (EmpEMail),
 CONSTRAINT FKSupEmpNo FOREIGN KEY (SupEmpNo) REFERENCES Employee (EmpNo));
+
 
 
 -------------------- Product --------------------------------
